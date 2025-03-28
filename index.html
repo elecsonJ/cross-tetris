@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Tetris JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cross Tetris (JavaScript Version)</h1>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="sidebar">
+            <h2>Info</h2>
+            <div id="score">Score: 0</div>
+            <div id="level">Level: 1</div>
+            <div id="lines">Lines: 0</div>
+            <div id="direction">Direction: ?</div>
+            <div id="direction-arrow">
+                <!-- 화살표는 Canvas에 그릴 수도 있고, 여기서 SVG 등으로 표현할 수도 있습니다. -->
+                <!-- 여기서는 Canvas에 그리는 것으로 가정합니다. -->
+            </div>
+            <div id="controls">
+                <h3>Controls:</h3>
+                <p>Arrow keys: Move relative</p>
+                <p>Space: Rotate</p>
+                <p>Enter: Drop</p>
+                <p>P: Pause</p>
+                <p>R: Restart</p>
+            </div>
+            <button id="exitButton">Exit (Refresh)</button> 
+            <!-- 웹에서는 '종료'가 브라우저 탭 닫기이므로, '새로고침'으로 대체 -->
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
