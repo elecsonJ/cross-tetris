@@ -3,36 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross Tetris JS</title>
+    <title>Cross Tetris - 4-Directional Gravity Tetris Game</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience Tetris with a revolutionary twist! Cross Tetris features 4-directional gravity where pieces fall North, East, South, and West. Play the unique cross-shaped puzzle game now!">
+    <meta name="keywords" content="tetris, puzzle game, cross tetris, 4-directional, gravity, HTML5 game, javascript game, browser game">
+    <meta name="author" content="elecsonJ">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cross Tetris - Revolutionary 4-Directional Tetris">
+    <meta property="og:description" content="Experience Tetris like never before with pieces falling in all four directions - North, East, South, and West!">
+    <meta property="og:url" content="https://elecsonj.github.io/cross-tetris/">
+    <meta property="og:site_name" content="Cross Tetris">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cross Tetris - 4-Directional Gravity Tetris">
+    <meta name="twitter:description" content="Revolutionary Tetris with gravity in all directions. Master the cross-shaped board!">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❌</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cross Tetris (JavaScript Version)</h1>
-    <div id="game-container">
-        <canvas id="gameCanvas"></canvas>
-        <div id="sidebar">
-            <h2>Info</h2>
-            <div id="score">Score: 0</div>
-            <div id="level">Level: 1</div>
-            <div id="lines">Lines: 0</div>
-            <div id="direction">Direction: ?</div>
-            <div id="direction-arrow">
-                <!-- 화살표는 Canvas에 그릴 수도 있고, 여기서 SVG 등으로 표현할 수도 있습니다. -->
-                <!-- 여기서는 Canvas에 그리는 것으로 가정합니다. -->
+    <header class="game-header">
+        <h1>❌ Cross Tetris</h1>
+        <p class="subtitle">Revolutionary 4-Directional Gravity Tetris</p>
+    </header>
+    
+    <main>
+        <div id="game-container">
+            <div class="game-area">
+                <canvas id="gameCanvas"></canvas>
+                <div class="game-overlay" id="gameOverlay"></div>
             </div>
-            <div id="controls">
-                <h3>Controls:</h3>
-                <p>Arrow keys: Move relative</p>
-                <p>Space: Rotate</p>
-                <p>Enter: Drop</p>
-                <p>P: Pause</p>
-                <p>R: Restart</p>
-            </div>
-            <button id="exitButton">Exit (Refresh)</button> 
-            <!-- 웹에서는 '종료'가 브라우저 탭 닫기이므로, '새로고침'으로 대체 -->
+            
+            <aside id="sidebar" class="sidebar">
+                <div class="info-section">
+                    <h2>📊 Game Stats</h2>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Score:</span>
+                            <span id="score" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Level:</span>
+                            <span id="level" class="stat-value">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Lines:</span>
+                            <span id="lines" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>🎮 How to Play</h3>
+                    <div class="game-info">
+                        <p><strong>🔄 Unique Feature:</strong><br>
+                        Pieces fall in <em>all 4 directions</em>!<br>
+                        🧭 North ➡️ East ⬇️ South ⬅️ West</p>
+                        
+                        <p><strong>✨ Cross Board:</strong><br>
+                        Center spawn area with<br>
+                        4 directional sectors</p>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>⌨️ Controls</h3>
+                    <div class="controls-grid">
+                        <div class="control-item">
+                            <kbd>← → ↑ ↓</kbd>
+                            <span>Move (relative to falling direction)</span>
+                        </div>
+                        <div class="control-item">
+                            <kbd>Space</kbd>
+                            <span>Rotate piece</span>
+                        </div>
+                        <div class="control-item">
+                            <kbd>Enter</kbd>
+                            <span>Hard drop</span>
+                        </div>
+                        <div class="control-item">
+                            <kbd>P</kbd>
+                            <span>Pause/Resume</span>
+                        </div>
+                        <div class="control-item">
+                            <kbd>R</kbd>
+                            <span>Restart game</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>🎯 Game Features</h3>
+                    <ul class="feature-list">
+                        <li>🔄 4-directional gravity system</li>
+                        <li>👻 Ghost piece preview</li>
+                        <li>🧠 Advanced wall kick rotation</li>
+                        <li>🎨 Color-coded sectors</li>
+                        <li>📈 Progressive difficulty</li>
+                        <li>✨ Smart boundary management</li>
+                    </ul>
+                </div>
+
+                <div class="info-section button-section">
+                    <button id="restartButton" class="game-button primary">🔄 Restart Game</button>
+                    <button id="pauseButton" class="game-button">⏸️ Pause</button>
+                </div>
+            </aside>
         </div>
-    </div>
+    </main>
+
+    <footer class="game-footer">
+        <p>
+            <strong>Cross Tetris</strong> - Experience gravity in all directions! 
+            <a href="https://github.com/elecsonJ/cross-tetris" target="_blank" rel="noopener">
+                View on GitHub ↗️
+            </a>
+        </p>
+    </footer>
 
     <script src="game.js"></script>
+    
+    <!-- Enhanced button functionality -->
+    <script>
+        // Enhanced restart button
+        document.getElementById('restartButton').addEventListener('click', () => {
+            const event = new KeyboardEvent('keydown', { key: 'R' });
+            document.dispatchEvent(event);
+        });
+        
+        // Enhanced pause button
+        document.getElementById('pauseButton').addEventListener('click', () => {
+            const event = new KeyboardEvent('keydown', { key: 'P' });
+            document.dispatchEvent(event);
+            
+            // Update button text based on game state
+            setTimeout(() => {
+                const pauseBtn = document.getElementById('pauseButton');
+                if (window.paused) {
+                    pauseBtn.textContent = '▶️ Resume';
+                } else {
+                    pauseBtn.textContent = '⏸️ Pause';
+                }
+            }, 100);
+        });
+        
+        // Keyboard focus for better accessibility
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.setAttribute('tabindex', '0');
+            document.body.focus();
+        });
+    </script>
 </body>
 </html>
