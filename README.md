@@ -10,7 +10,7 @@ A unique twist on the classic Tetris game featuring **dynamic falling directions
 
 ### 🔄 Dynamic Falling Directions
 Unlike traditional Tetris where pieces only fall downward, Cross Tetris introduces **4-directional gravity**:
-- 🧭 **North**: Pieces fall upward (toward top)
+- ⬆️ **North**: Pieces fall upward (toward top)
 - ➡️ **East**: Pieces fall rightward 
 - ⬇️ **South**: Pieces fall downward (traditional)
 - ⬅️ **West**: Pieces fall leftward
@@ -19,11 +19,11 @@ Each new piece spawns with a **randomly assigned falling direction**, creating u
 
 ### ✨ Cross-Shaped Game Board
 ```
-    |  North   |
-----|----------|----
+     |  North  |
+-----|---------|-----
 West | Center  | East  
-----|----------|----
-    |  South   |
+-----|---------|-----
+     |  South  |
 ```
 - **Center Area**: 10×10 grid where pieces spawn and can move freely
 - **Four Sectors**: 25×10 extensions in each direction for directional falling
